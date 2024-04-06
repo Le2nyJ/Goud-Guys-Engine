@@ -1,0 +1,2428 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "MoteurCustom"
+    </assembly>
+    <members>
+        <member name="M:lve.LveCamera.setViewYXZ(glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;,glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;)">
+            <summary>
+ Définit la vue de la caméra en utilisant des angles YXZ
+</summary>
+            <param name="position" />
+            <param name="rotation" />
+        </member>
+        <member name="M:lve.LveCamera.setViewTarget(glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;,glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;,glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;)">
+            <summary>
+Définit la cible de vue de la caméra
+</summary>
+            <param name="position" />
+            <param name="target" />
+            <param name="up" />
+        </member>
+        <member name="M:lve.LveCamera.setViewDirection(glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;,glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;,glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;)">
+            <summary>
+Définit la direction de vue de la caméra
+</summary>
+            <param name="position" />
+            <param name="direction" />
+            <param name="up" />
+        </member>
+        <member name="M:lve.LveCamera.setPerspectiveProjection(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+Définit une projection en perspective pour la caméra
+</summary>
+            <param name="fovy" />
+            <param name="aspect" />
+            <param name="" />
+            <param name="" />
+        </member>
+        <member name="M:lve.LveCamera.setOrthographicProjection(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+Définit une projection orthographique pour la caméra
+</summary>
+            <param name="left" />
+            <param name="right" />
+            <param name="top" />
+            <param name="bottom" />
+            <param name="" />
+            <param name="" />
+        </member>
+        <member name="M:lve.KeyboardMovementController.moveInPanelXZ(GLFWwindow*,System.Single,lve.LveGameObject*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Implémente la logique de déplacement et de rotation de l'objet en fonction des touches du clavier et du temps écoulé depuis la dernière mise à jour.
+</summary>
+            <param name="window" />
+            <param name="dt" />
+            <param name="gameObject" />
+        </member>
+        <member name="M:lve.LveDevice.createImageWithInfo(VkImageCreateInfo!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt32,VkImage_T**!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkDeviceMemory_T**!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Crée une image Vulkan avec des informations spécifiées
+</summary>
+            <param name="imageInfo" />
+            <param name="properties" />
+            <param name="image" />
+            <param name="imageMemory" />
+        </member>
+        <member name="M:lve.LveDevice.copyBufferToImage(VkBuffer_T*,VkImage_T*,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+Copie les données d'un tampon à une image
+</summary>
+            <param name="buffer" />
+            <param name="image" />
+            <param name="width" />
+            <param name="height" />
+            <param name="layerCount" />
+        </member>
+        <member name="M:lve.LveDevice.copyBuffer(VkBuffer_T*,VkBuffer_T*,System.UInt64)">
+            <summary>
+Copie les données d'un tampon à un autre
+</summary>
+            <param name="srcBuffer" />
+            <param name="dstBuffer" />
+            <param name="size" />
+        </member>
+        <member name="M:lve.LveDevice.endSingleTimeCommands(VkCommandBuffer_T*)">
+            <summary>
+Soumet et libère un tampon de commandes à utilisation unique
+</summary>
+            <param name="commandBuffer" />
+        </member>
+        <member name="M:lve.LveDevice.beginSingleTimeCommands">
+            <summary>
+Alloue un tampon de commandes pour une utilisation unique
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.createBuffer(System.UInt64,System.UInt32,System.UInt32,VkBuffer_T**!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkDeviceMemory_T**!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Crée un tampon Vulkan
+</summary>
+            <param name="size" />
+            <param name="usage" />
+            <param name="properties" />
+            <param name="buffer" />
+            <param name="bufferMemory" />
+        </member>
+        <member name="M:lve.LveDevice.findMemoryType(System.UInt32,System.UInt32)">
+            <summary>
+Trouve le type de mémoire approprié
+</summary>
+            <param name="typeFilter" />
+            <param name="properties" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.findSupportedFormat(std.vector&lt;VkFormat,std.allocator&lt;VkFormat&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkImageTiling,System.UInt32)">
+            <summary>
+ Trouve le format supporté
+</summary>
+            <param name="candidates" />
+            <param name="tiling" />
+            <param name="features" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.querySwapChainSupport(VkPhysicalDevice_T*)">
+            <summary>
+Interroge le support de la chaîne de balayage pour le périphérique physique
+</summary>
+            <param name="device" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.findQueueFamilies(VkPhysicalDevice_T*)">
+            <summary>
+Trouve les files d'attente nécessaires pour le périphérique physique
+</summary>
+            <param name="device" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.checkDeviceExtensionSupport(VkPhysicalDevice_T*)">
+            <summary>
+Vérifie la disponibilité des extensions pour le périphérique physique
+</summary>
+            <param name="device" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.hasGflwRequiredInstanceExtensions">
+            <summary>
+Vérifie la disponibilité des extensions nécessaires à GLFW
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.getRequiredExtensions">
+            <summary>
+Récupère les extensions Vulkan nécessaires
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.checkValidationLayerSupport">
+            <summary>
+Vérifie la disponibilité des couches de validation
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.setupDebugMessenger">
+            <summary>
+Configure le débogueur
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Initialise la structure de création pour le débogueur
+</summary>
+            <param name="createInfo" />
+        </member>
+        <member name="M:lve.LveDevice.isDeviceSuitable(VkPhysicalDevice_T*)">
+            <summary>
+Vérifie si le périphérique physique est adapté à l'application
+</summary>
+            <param name="device" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDevice.createSurface">
+            <summary>
+Crée la surface pour la fenêtre associée au périphérique
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.createCommandPool">
+            <summary>
+Crée le pool de commandes pour le périphérique
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.createLogicalDevice">
+            <summary>
+Crée le périphérique logique avec les files d'attente requises
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.pickPhysicalDevice">
+            <summary>
+Sélectionne le périphérique physique appropri
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.createInstance">
+            <summary>
+ Crée l'instance Vulkan avec les extensions et les couches de validation
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.Dispose">
+            <summary>
+ Libère les ressources allouées par l'objet LveDevice
+</summary>
+        </member>
+        <member name="M:lve.LveDevice.#ctor(lve.LveWindow*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+  Initialise un objet LveDevice en créant l'instance Vulkan, le débogueur, la surface, le périphérique physique, le périphérique logique et le pool de commandes
+</summary>
+            <param name="window" />
+        </member>
+        <member name="M:lve.LveWindow.framebufferResizeCallback(GLFWwindow*,System.Int32,System.Int32)">
+            <summary>
+Callback appelé lors du redimensionnement de la fenêtre.
+</summary>
+            <param name="window" />
+            <param name="width" />
+            <param name="height" />
+        </member>
+        <member name="M:lve.LveWindow.createWindowSurface(VkInstance_T*,VkSurfaceKHR_T**)">
+            <summary>
+Crée la surface de la fenêtre pour Vulkan.
+</summary>
+            <param name="instance" />
+            <param name="surface" />
+        </member>
+        <member name="M:lve.LveWindow.initWindow">
+            <summary>
+Initialise la fenêtre GLFW avec les paramètres appropriés.
+</summary>
+        </member>
+        <member name="M:lve.LveWindow.Dispose">
+            <summary>
+Destructeur
+</summary>
+        </member>
+        <member name="M:lve.LveWindow.#ctor(System.Int32,System.Int32,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>
+Constructeur initialisant la fenêtre avec une largeur, une hauteur et un nom spécifiés
+</summary>
+        </member>
+        <member name="M:lve.SimpleRenderSystem.renderGameObjects(lve.FrameInfo*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Lie le pipeline de rendu et les ensembles de descripteurs.
+Itère sur les objets de jeu dans frameInfo.gameObjects.
+   Pour chaque objet :
+Met à jour les constantes de poussée(push constants) avec la transformation actuelle de l'objet.
+  Lie le modèle de l'objet et déclenche le dessin
+</summary>
+            <param name="frameInfo" />
+        </member>
+        <member name="M:lve.SimpleRenderSystem.createPipeline(VkRenderPass_T*)">
+            <summary>
+Crée le pipeline de rendu (lvePipeline).
+Utilise la configuration du pipeline Vulkan(PipeLineConfigInfo).
+Utilise les shaders vertex et fragment spécifiés
+</summary>
+            <param name="renderPass" />
+        </member>
+        <member name="M:lve.SimpleRenderSystem.getCurrentTime">
+            <summary>
+Retourne le temps actuel de la machine en secondes
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.SimpleRenderSystem.createPipelineLayout(VkDescriptorSetLayout_T*)">
+            <summary>
+Crée la mise en page du pipeline Vulkan (pipelineLayout).
+Utilise un VkPushConstantRange pour spécifier des données pouvant être modifiées entre les trames.
+Utilise un ensemble de descripteurs global(globalSetLayout).
+</summary>
+            <param name="globalSetLayout" />
+        </member>
+        <member name="M:lve.SimpleRenderSystem.Dispose">
+            <summary>
+Détruit le pipeline layout Vulkan
+</summary>
+        </member>
+        <member name="M:lve.SimpleRenderSystem.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkRenderPass_T*,VkDescriptorSetLayout_T*)">
+            <summary>
+Prend une référence à un objet LveDevice, un VkRenderPass et un VkDescriptorSetLayout en paramètres.
+Appelle la fonction createPipelineLayout pour créer la mise en page du pipeline.
+  Appelle la fonction createPipeline pour créer le pipeline de rendu
+</summary>
+            <param name="device" />
+            <param name="renderPass" />
+            <param name="globalSetLayout" />
+        </member>
+        <member name="M:lve.LveImgui.initInspector">
+            <summary>
+Initialise une fenêtre d'inspection ImGui.
+Affiche la démo ImGui si l'indicateur show_demo_window est activé.
+Affiche un bouton "Create Cube" qui active la création d'un cube (cubecre est défini à true).
+Si cubecre est true, affiche les contrôles ImGui pour définir les propriétés du cube(myCube).
+Affiche un texte avec le temps moyen par frame et les FPS de l'application
+</summary>
+        </member>
+        <member name="M:lve.LveImgui.initImGui">
+            <summary>
+Initialise le contexte ImGui, configure le style, et initialise les backends pour GLFW et Vulkan.
+Crée la texture de polices ImGui
+</summary>
+        </member>
+        <member name="M:lve.LveImgui.getPositionSliderValue(System.Int32)">
+            <summary>
+Return the scale walue from the UI
+</summary>
+            <param name="xyz" />
+            <returns />
+        </member>
+        <member name="M:lve.LveImgui.getRotationSliderValue(System.Int32)">
+            <summary>
+Return the scale walue from the UI
+</summary>
+            <param name="xyz" />
+            <returns />
+        </member>
+        <member name="M:lve.LveImgui.getScaleSliderValue(System.Int32)">
+            <summary>
+Return the scale walue from the UI
+</summary>
+            <param name="xyz" />
+            <returns />
+        </member>
+        <member name="M:lve.LveImgui.renderImGui(VkCommandBuffer_T*)">
+            <summary>
+Cette fonction est appelée pour rendre l'interface ImGui.
+Initialise un nouveau frame ImGui et rend le contenu.
+Appelle la fonction initInspector() pour initialiser une fenêtre d'inspection
+</summary>
+            <param name="commandBuffer" />
+        </member>
+        <member name="M:lve.LveImgui.Dispose">
+            <summary>
+Appelle les fonctions de fermeture de ImGui et libère les ressources associées, y compris le pool de descripteurs
+</summary>
+        </member>
+        <member name="M:lve.LveImgui.#ctor(lve.LveWindow*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,lve.LveRenderer*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Il prend une référence à un objet LveWindow, LveDevice, et LveRenderer en paramètre.
+Initialise un pool de descripteurs pour ImGui.
+Appelle la fonction initImGui() pour initialiser ImGui
+</summary>
+            <param name="window" />
+            <param name="device" />
+            <param name="renderer" />
+        </member>
+        <member name="M:lve.PointLightSystem.render(lve.FrameInfo*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Effectue le rendu des lumières ponctuelles.
+</summary>
+            <param name="frameInfo" />
+        </member>
+        <member name="M:lve.PointLightSystem.createPipeline(VkRenderPass_T*)">
+            <summary>
+Crée le pipeline graphique pour le système de lumières ponctuelles.
+</summary>
+            <param name="renderPass" />
+        </member>
+        <member name="M:lve.PointLightSystem.update(lve.FrameInfo*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,lve.GlobalUbo*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Met à jour les informations sur les lumières à chaque frame.
+</summary>
+            <param name="frameInfo" />
+            <param name="ubo" />
+        </member>
+        <member name="M:lve.PointLightSystem.getCurrentTime">
+            <summary>
+Retourne le temps actuel de la machine
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.PointLightSystem.createPipelineLayout(VkDescriptorSetLayout_T*)">
+            <summary>
+Crée la mise en page du pipeline.
+</summary>
+            <param name="globalSetLayout" />
+        </member>
+        <member name="M:lve.PointLightSystem.Dispose">
+            <summary>
+Destructeur
+</summary>
+        </member>
+        <member name="M:lve.PointLightSystem.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkRenderPass_T*,VkDescriptorSetLayout_T*)">
+            <summary>
+Constructeur initialisant le système avec un périphérique logique, un passe de rendu Vulkan, et une mise en page de descripteurs globaux.
+</summary>
+            <param name="device" />
+            <param name="renderPass" />
+            <param name="globalSetLayout" />
+        </member>
+        <member name="M:lve.FirstApp.loadCubesCollision">
+            <summary>
+Chargement des cubes pour la demo des colisions 
+</summary>
+        </member>
+        <member name="M:lve.FirstApp.loadGameObjects">
+            <summary>
+chargement de tous les objects de la scène
+</summary>
+        </member>
+        <member name="M:lve.FirstApp.getCurrentTime">
+            <summary>
+Retourne le temps actuel de la machine
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.FirstApp.run">
+            <summary>
+Fonction principale pour exécuter l'application, gère l'initialisation, la boucle principale, et la libération des ressources.
+</summary>
+        </member>
+        <member name="M:lve.LveBuffer.invalidateIndex(System.Int32)">
+ Invalidate a memory range of the buffer to make it visible to the host
+
+ @note Only required for non-coherent memory
+
+ @param index Specifies the region to invalidate: index * alignmentSize
+
+ @return VkResult of the invalidate call
+
+<summary>
+Invalide la plage de mémoire du tampon à l'indice spécifié
+</summary><param name="index" /><returns /></member>
+        <member name="M:lve.LveBuffer.descriptorInfoForIndex(System.Int32)">
+ Create a buffer info descriptor
+
+ @param index Specifies the region given by index * alignmentSize
+
+ @return VkDescriptorBufferInfo for instance at index
+
+<summary>
+Crée une structure VkDescriptorBufferInfo pour l'instance à l'indice spécifié
+</summary><param name="index" /><returns /></member>
+        <member name="M:lve.LveBuffer.flushIndex(System.Int32)">
+  Flush the memory range at index * alignmentSize of the buffer to make it visible to the device
+
+ @param index Used in offset calculation
+
+
+<summary>
+Flush la plage de mémoire du tampon à l'indice spécifié
+</summary><param name="index" /><returns /></member>
+        <member name="M:lve.LveBuffer.writeToIndex(System.Void*,System.Int32)">
+ Copies "instanceSize" bytes of data to the mapped buffer at an offset of index * alignmentSize
+
+ @param data Pointer to the data to copy
+ @param index Used in offset calculation
+
+
+<summary>
+Copie une quantité spécifiée de données dans le tampon à un indice donné
+</summary><param name="data" /><param name="index" /></member>
+        <member name="M:lve.LveBuffer.descriptorInfo(System.UInt64,System.UInt64)">
+ Create a buffer info descriptor
+
+ @param size (Optional) Size of the memory range of the descriptor
+ @param offset (Optional) Byte offset from beginning
+
+ @return VkDescriptorBufferInfo of specified offset and range
+
+<summary>
+Crée une structure VkDescriptorBufferInfo pour la plage spécifiée
+</summary><param name="size" /><param name="offset" /><returns /></member>
+        <member name="M:lve.LveBuffer.invalidate(System.UInt64,System.UInt64)">
+ Invalidate a memory range of the buffer to make it visible to the host
+
+ @note Only required for non-coherent memory
+
+ @param size (Optional) Size of the memory range to invalidate. Pass VK_WHOLE_SIZE to invalidate
+ the complete buffer range.
+ @param offset (Optional) Byte offset from beginning
+
+ @return VkResult of the invalidate call
+
+<summary>
+Invalide une plage de mémoire du tampon pour la rendre visible pour l'hôte
+</summary><param name="size" /><param name="offset" /><returns /></member>
+        <member name="M:lve.LveBuffer.flush(System.UInt64,System.UInt64)">
+ Flush a memory range of the buffer to make it visible to the device
+
+ @note Only required for non-coherent memory
+
+ @param size (Optional) Size of the memory range to flush. Pass VK_WHOLE_SIZE to flush the
+ complete buffer range.
+ @param offset (Optional) Byte offset from beginning
+
+ @return VkResult of the flush call
+
+<summary>
+ Flush une plage de mémoire du tampon pour la rendre visible pour le périphérique
+</summary><param name="size" /><param name="offset" /><returns /></member>
+        <member name="M:lve.LveBuffer.writeToBuffer(System.Void*,System.UInt64,System.UInt64)">
+ Copies the specified data to the mapped buffer. Default value writes whole buffer range
+
+ @param data Pointer to the data to copy
+ @param size (Optional) Size of the data to copy. Pass VK_WHOLE_SIZE to flush the complete buffer
+ range.
+ @param offset (Optional) Byte offset from beginning of mapped region
+
+
+<summary>
+Copie les données spécifiées dans le tampon mappé
+</summary><param name="data" /><param name="size" /><param name="offset" /></member>
+        <member name="M:lve.LveBuffer.unmap">
+ Unmap a mapped memory range
+
+ @note Does not return a result as vkUnmapMemory can't fail
+
+<summary>
+Désapprouve une plage de mémoire mappée
+</summary></member>
+        <member name="M:lve.LveBuffer.map(System.UInt64,System.UInt64)">
+ Map a memory range of this buffer. If successful, mapped points to the specified buffer range.
+
+ @param size (Optional) Size of the memory range to map. Pass VK_WHOLE_SIZE to map the complete
+ buffer range.
+ @param offset (Optional) Byte offset from beginning
+
+ @return VkResult of the buffer mapping call
+
+<summary>
+Mappe une plage de mémoire de ce tampon
+</summary><param name="size" /><param name="offset" /><returns /></member>
+        <member name="M:lve.LveBuffer.Dispose">
+            <summary>
+Destructeur de la classe LveBuffer
+</summary>
+        </member>
+        <member name="M:lve.LveBuffer.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.UInt64)">
+            <summary>
+Constructeur de la classe LveBuffer
+</summary>
+            <param name="device" />
+            <param name="instanceSize" />
+            <param name="instanceCount" />
+            <param name="usageFlags" />
+            <param name="memoryPropertyFlags" />
+            <param name="minOffsetAlignment" />
+        </member>
+        <member name="M:lve.LveBuffer.getAlignment(System.UInt64,System.UInt64)">
+ Returns the minimum instance size required to be compatible with devices minOffsetAlignment
+
+ @param instanceSize The size of an instance
+ @param minOffsetAlignment The minimum required alignment, in bytes, for the offset member (eg
+ minUniformBufferOffsetAlignment)
+
+ @return VkResult of the buffer mapping call
+
+<summary>
+Retourne l'alignement minimum nécessaire pour être compatible avec minOffsetAlignment
+</summary><param name="instanceSize" /><param name="minOffsetAlignment" /><returns /></member>
+        <member name="M:lve.LveGameObject.makePointLight(System.Single,System.Single,glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;)">
+            <summary>
+Retourne la matrice de transformation 4x4 basÃ©e sur la translation, l'Ã©chelle et la rotation de l'obje
+</summary>
+            <param name="intensity" />
+            <param name="radius" />
+            <param name="color" />
+            <returns />
+        </member>
+        <member name="M:lve.TransformComponent.bouncingAABB(lve.AABB)">
+            <summary>
+Applique un rebond a l'objet en fonction de la face touchÃ©e
+</summary>
+            <param name="box" />
+        </member>
+        <member name="M:lve.TransformComponent.updateAcceleration">
+            <summary>
+Applique l'acceleration a la vitesse et la vitesse a la position en prenant en compte les frictions
+</summary>
+        </member>
+        <member name="M:lve.TransformComponent.update">
+            <summary>
+Applique l'acceleration a la vitesse et la vitesse a la position
+</summary>
+        </member>
+        <member name="M:lve.TransformComponent.setTranslation(glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;)">
+            <summary>
+Modifie la translation de l'objet ainsi que sa hitbox
+</summary>
+            <param name="translation" />
+        </member>
+        <member name="M:lve.TransformComponent.setTransform(glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;,glm.vec&lt;0x3,System.Single,glm::packed_highp&gt;)">
+            <summary>
+Modifie le scale et la position de l'obet ainsi que pour so hit box
+</summary>
+            <param name="translation" />
+            <param name="scale" />
+        </member>
+        <member name="M:lve.TransformComponent.normalMatrix">
+            <summary>
+ Retourne la matrice normale 3x3 basÃ©e sur l'inverse de l'Ã©chelle et la rotation de l'objet
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.TransformComponent.mat4">
+            <summary>
+Retourne la matrice de transformation 4x4 basÃ©e sur la translation, l'Ã©chelle et la rotation de l'obje
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveModel.Builder.loadModel(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Contient une méthode loadModel qui utilise la bibliothèque TinyObjLoader pour charger un modèle à partir d'un fichier OBJ.
+Remplit le vecteur de vertices(vertices) et d'indices (indices) à partir des données du fichier OBJ.
+Utilise un dictionnaire std::unordered_map pour garantir l'unicité des vertices
+</summary>
+            <param name="filepath" />
+        </member>
+        <member name="M:lve.LveModel.bind(VkCommandBuffer_T*)">
+            <summary>
+Appelle vkCmdBindVertexBuffers et vkCmdBindIndexBuffer pour lier les tampons au pipeline de rendu
+</summary>
+            <param name="commandBuffer" />
+        </member>
+        <member name="M:lve.LveModel.draw(VkCommandBuffer_T*)">
+            <summary>
+Appelle vkCmdDrawIndexed ou vkCmdDraw en fonction de la présence d'un tampon d'indices
+</summary>
+            <param name="commandBuffer" />
+        </member>
+        <member name="M:lve.LveModel.createIndexBuffers(std.vector&lt;System.UInt32,std.allocator&lt;System.UInt32&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Prend un vecteur d'indices en paramètre.
+Alloue un tampon d'indices sur le GPU après avoir utilisé un tampon temporaire pour transférer les données depuis le CPU.
+Vérifie si l'objet LveModel a un tampon d'indices(s'il y a des indices)
+</summary>
+            <param name="indices" />
+        </member>
+        <member name="M:lve.LveModel.createVertexBuffers(std.vector&lt;lve.LveModel.Vertex,std.allocator&lt;lve.LveModel.Vertex&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Prend un vecteur de Vertex en paramètre.
+Alloue un tampon de vertex sur le GPU après avoir utilisé un tampon temporaire pour transférer les données depuis le CPU
+</summary>
+            <param name="vertices" />
+        </member>
+        <member name="M:lve.LveModel.Dispose">
+            <summary>
+Détruit l'objet LveModel.
+Les tampons de vertex et d'indices sont détruits automatiquement car ce sont des objets std::unique_ptr
+</summary>
+        </member>
+        <member name="M:lve.LveModel.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,lve.LveModel.Builder!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Prend une référence à un objet LveDevice et un objet Builder en paramètre.
+Appelle les fonctions createVertexBuffers et createIndexBuffers pour créer les tampons de vertex et d'indices respectivement
+</summary>
+            <param name="device" />
+            <param name="builder" />
+        </member>
+        <member name="T:std.hash{lve.LveModel.Vertex}">
+            <summary>
+Contient des données de vertex telles que position, couleur, normale et coordonnées de texture.
+Possède des méthodes statiques(getBindingDescriptions et getAttributeDescriptions) pour décrire les données de vertex pour Vulkan
+</summary>
+        </member>
+        <member name="D:glm.ddualquat">
+Dual-quaternion of default double-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.fdualquat">
+Dual-quaternion of single-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.dualquat">
+Dual-quaternion of floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.highp_ddualquat">
+Dual-quaternion of high double-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.mediump_ddualquat">
+Dual-quaternion of medium double-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.lowp_ddualquat">
+Dual-quaternion of low double-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.highp_fdualquat">
+Dual-quaternion of high single-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.mediump_fdualquat">
+Dual-quaternion of medium single-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.lowp_fdualquat">
+Dual-quaternion of low single-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.highp_dualquat">
+Dual-quaternion of high single-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.mediump_dualquat">
+Dual-quaternion of medium single-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.lowp_dualquat">
+Dual-quaternion of low single-qualifier floating-point numbers.
+
+@see gtx_dual_quaternion
+</member>
+        <member name="D:glm.highp_dquat">
+Quaternion of high double-qualifier floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see ext_quaternion_double_precision
+</member>
+        <member name="D:glm.mediump_dquat">
+Quaternion of medium double-qualifier floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see ext_quaternion_double_precision
+</member>
+        <member name="D:glm.lowp_dquat">
+@addtogroup ext_quaternion_double_precision
+@{
+Quaternion of double-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see ext_quaternion_double_precision
+</member>
+        <member name="D:glm.dquat">
+@addtogroup ext_quaternion_double
+@{
+Quaternion of double-precision floating-point numbers.
+</member>
+        <member name="D:glm.highp_quat">
+Quaternion of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.mediump_quat">
+Quaternion of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.lowp_quat">
+@addtogroup ext_quaternion_float_precision
+@{
+Quaternion of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.quat">
+@addtogroup ext_quaternion_float
+@{
+Quaternion of single-precision floating-point numbers.
+</member>
+        <member name="D:glm.u64vec1">
+64 bit unsigned integer vector of 1 component type.
+
+@see ext_vector_uint1_sized
+</member>
+        <member name="D:glm.u32vec1">
+32 bit unsigned integer vector of 1 component type.
+
+@see ext_vector_uint1_sized
+</member>
+        <member name="D:glm.u16vec1">
+16 bit unsigned integer vector of 1 component type.
+
+@see ext_vector_uint1_sized
+</member>
+        <member name="D:glm.u8vec1">
+@addtogroup ext_vector_uint1_sized
+@{
+8 bit unsigned integer vector of 1 component type.
+
+@see ext_vector_uint1_sized
+</member>
+        <member name="D:glm.uvec1">
+@addtogroup ext_vector_uint1
+@{
+1 component vector of unsigned integer numbers.
+</member>
+        <member name="D:glm.i64vec1">
+64 bit signed integer vector of 1 component type.
+
+@see ext_vector_int1_sized
+</member>
+        <member name="D:glm.i32vec1">
+32 bit signed integer vector of 1 component type.
+
+@see ext_vector_int1_sized
+</member>
+        <member name="D:glm.i16vec1">
+16 bit signed integer vector of 1 component type.
+
+@see ext_vector_int1_sized
+</member>
+        <member name="D:glm.i8vec1">
+@addtogroup ext_vector_int1_sized
+@{
+8 bit signed integer vector of 1 component type.
+
+@see ext_vector_int1_sized
+</member>
+        <member name="D:glm.ivec1">
+@addtogroup ext_vector_int1
+@{
+1 component vector of signed integer numbers.
+</member>
+        <member name="D:glm.lowp_dvec1">
+1 component vector of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.mediump_dvec1">
+1 component vector of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.highp_dvec1">
+@addtogroup ext_vector_double1_precision
+@{
+1 component vector of double-precision floating-point numbers using high precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.dvec1">
+@addtogroup ext_vector_double1
+@{
+1 components vector of double-precision floating-point numbers.
+</member>
+        <member name="D:glm.lowp_vec1">
+1 component vector of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.mediump_vec1">
+1 component vector of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.highp_vec1">
+@addtogroup ext_vector_float1_precision
+@{
+1 component vector of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+</member>
+        <member name="D:glm.vec1">
+@addtogroup ext_vector_float1
+@{
+1 components vector of single-precision floating-point numbers.
+</member>
+        <member name="D:glm.lowp_bvec1">
+1 component vector of bool values.
+</member>
+        <member name="D:glm.mediump_bvec1">
+1 component vector of bool values.
+</member>
+        <member name="D:glm.highp_bvec1">
+@addtogroup ext_vector_bool1_precision
+@{
+1 component vector of bool values.
+</member>
+        <member name="D:glm.bvec1">
+@addtogroup ext_vector_bool1
+@{
+1 components vector of boolean.
+</member>
+        <member name="M:tinyobj.ParseTextureNameAndOption(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*,tinyobj.texture_option_t*,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*)">
+
+Parse texture name and texture option for custom texture parameter through
+material::unknown_parameter
+
+@param[out] texname Parsed texture name
+@param[out] texopt Parsed texopt
+@param[in] linebuf Input string
+
+</member>
+        <member name="M:tinyobj.LoadMtl(std.map&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;,System.Int32,std.less&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;&gt;,std.allocator&lt;std.pair&lt;std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.R">
+Loads materials into std::map
+</member>
+        <member name="M:tinyobj.LoadObj(tinyobj.attrib_t*,std.vector&lt;tinyobj.shape_t,std.allocator&lt;tinyobj.shape_t&gt;&gt;*,std.vector&lt;tinyobj.material_t,std.allocator&lt;tinyobj.material_t&gt;&gt;*,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*,std.basic_istream&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SBy">
+Loads object from a std::istream, uses `readMatFn` to retrieve
+std::istream for materials.
+Returns true when loading .obj become success.
+Returns warning and error message into `err`
+</member>
+        <member name="M:tinyobj.LoadObjWithCallback(std.basic_istream&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte}&gt;*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,tinyobj.callback_t!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Void*,tinyobj.MaterialReader*,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!">
+Loads .obj from a file with custom user callback.
+.mtl is loaded as usual and parsed material_t data will be passed to
+`callback.mtllib_cb`.
+Returns true when loading .obj/.mtl become success.
+Returns warning message into `warn`, and error message into `err`
+See `examples/callback_api/` for how to use this function.
+</member>
+        <member name="M:tinyobj.LoadObj(tinyobj.attrib_t*,std.vector&lt;tinyobj.shape_t,std.allocator&lt;tinyobj.shape_t&gt;&gt;*,std.vector&lt;tinyobj.material_t,std.allocator&lt;tinyobj.material_t&gt;&gt;*,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;*,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,Sys">
+==&gt;&gt;========= Legacy v1 API =============================================
+Loads .obj from a file.
+'attrib', 'shapes' and 'materials' will be filled with parsed shape data
+'shapes' will be filled with parsed shape data
+Returns true when loading .obj become success.
+Returns warning message into `warn`, and error message into `err`
+'mtl_basedir' is optional, and used for base directory for .mtl file.
+In default(`NULL'), .mtl file is searched from an application's working
+directory.
+'triangulate' is optional, and used whether triangulate polygon face in .obj
+or not.
+Option 'default_vcols_fallback' specifies whether vertex colors should
+always be defined, even if no colors are given (fallback to white).
+</member>
+        <member name="M:tinyobj.ObjReader.Error">
+
+Error message(filled when `Load` or `Parse` failed)
+
+</member>
+        <member name="M:tinyobj.ObjReader.Warning">
+
+Warning message(may be filled after `Load` or `Parse`)
+
+</member>
+        <member name="M:tinyobj.ObjReader.Valid">
+
+.obj was loaded or parsed correctly.
+
+</member>
+        <member name="M:tinyobj.ObjReader.ParseFromString(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,tinyobj.ObjReaderConfig!System.Runtime.Comp">
+
+Parse .obj from a text string.
+Need to supply .mtl text string by `mtl_text`.
+This function ignores `mtllib` line in .obj text.
+
+@param[in] obj_text wavefront .obj filename
+@param[in] mtl_text wavefront .mtl filename
+@param[in] config Reader configuration
+
+</member>
+        <member name="M:tinyobj.ObjReader.ParseFromFile(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,tinyobj.ObjReaderConfig!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+
+Load .obj and .mtl from a file.
+
+@param[in] filename wavefront .obj filename
+@param[in] config Reader configuration
+
+</member>
+        <member name="T:tinyobj.ObjReader">
+
+Wavefront .obj reader class(v2 API)
+
+</member>
+        <member name="F:tinyobj.ObjReaderConfig.mtl_search_path">
+
+Search path to .mtl file.
+Default = "" = search from the same directory of .obj file.
+Valid only when loading .obj from a file.
+
+</member>
+        <member name="F:tinyobj.ObjReaderConfig.vertex_color">
+Parse vertex color.
+If vertex color is not present, its filled with default value.
+false = no vertex color
+This will increase memory of parsed .obj
+</member>
+        <member name="T:tinyobj.MaterialStreamReader">
+
+Read .mtl from a stream.
+
+</member>
+        <member name="T:tinyobj.MaterialFileReader">
+
+Read .mtl from a file.
+
+</member>
+        <member name="M:lve.LvePipeline.enableAlphaBlending(lve.PipeLineConfigInfo*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Active le mélange alpha dans la configuration du pipeline
+</summary>
+            <param name="configInfo" />
+        </member>
+        <member name="M:lve.LvePipeline.defaultPipeLineConfigInfo(lve.PipeLineConfigInfo*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Initialise une structure PipeLineConfigInfo avec des valeurs par défaut
+</summary>
+            <param name="configInfo" />
+        </member>
+        <member name="M:lve.LvePipeline.bind(VkCommandBuffer_T*)">
+            <summary>
+Lie le pipeline graphique au tampon de commandes Vulkan spécifié
+</summary>
+            <param name="VkCommandBuffer" />
+        </member>
+        <member name="M:lve.LvePipeline.createShaderModule(std.vector&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkShaderModule_T**)">
+            <summary>
+Crée un module de shader Vulkan à partir du code source du shader
+</summary>
+            <param name="code" />
+            <param name="shaderModule" />
+        </member>
+        <member name="M:lve.LvePipeline.createGraphicsPipeline(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,lve.PipeLineConfigInfo!System.Runtime.">
+            <summary>
+Lit le code source des shaders depuis les fichiers spécifiés.
+Crée les modules de shader et les étapes du pipeline graphique Vulkan.
+   Utilise la configuration fournie(PipeLineConfigInfo) pour spécifier divers paramètres du pipeline
+</summary>
+            <param name="vertFilepath" />
+            <param name="fragFilepath" />
+            <param name="configInfo" />
+        </member>
+        <member name="M:lve.LvePipeline.readFile(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Prend un chemin de fichier en paramètre et retourne le contenu du fichier sous forme de vecteur de caractères
+</summary>
+            <param name="filepath" />
+            <returns />
+        </member>
+        <member name="M:lve.LvePipeline.Dispose">
+            <summary>
+Détruit les modules de shader et le pipeline graphique
+</summary>
+        </member>
+        <member name="M:lve.LvePipeline.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplic">
+            <summary>
+Prend une référence à un objet LveDevice, les chemins des fichiers des shaders vertex et fragment, ainsi qu'une structure PipeLineConfigInfo en paramètres.
+Appelle la fonction createGraphicsPipeline pour créer le pipeline graphique Vulkan
+</summary>
+            <param name="device" />
+            <param name="vertFilePath" />
+            <param name="fragFilePath" />
+            <param name="configInfo" />
+        </member>
+        <member name="T:_SETJMP_FLOAT128">
+@ref core
+</member>
+        <member name="M:glm.unpackHalf2x16(System.UInt32)">
+Returns a two-component floating-point vector with components obtained by unpacking a 32-bit unsigned integer into a pair of 16-bit values,
+interpreting those values as 16-bit floating-point numbers according to the OpenGL Specification,
+and converting them to 32-bit floating-point values.
+The first component of the vector is obtained from the 16 least-significant bits of v;
+the second component is obtained from the 16 most-significant bits of v.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackHalf2x16.xml">GLSL unpackHalf2x16 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.packHalf2x16(glm.vec&lt;0x2,System.Single,glm::packed_highp&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+Returns an unsigned integer obtained by converting the components of a two-component floating-point vector
+to the 16-bit floating-point representation found in the OpenGL Specification,
+and then packing these two 16- bit integers into a 32-bit unsigned integer.
+The first vector component specifies the 16 least-significant bits of the result;
+the second component specifies the 16 most-significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packHalf2x16.xml">GLSL packHalf2x16 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.unpackDouble2x32(System.Double)">
+Returns a two-component unsigned integer vector representation of v.
+The bit-level representation of v is preserved.
+The first component of the vector contains the 32 least significant bits of the double;
+the second component consists the 32 most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackDouble2x32.xml">GLSL unpackDouble2x32 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.packDouble2x32(glm.vec&lt;0x2,System.UInt32,glm::packed_highp&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+Returns a double-qualifier value obtained by packing the components of v into a 64-bit value.
+If an IEEE 754 Inf or NaN is created, it will not signal, and the resulting floating point value is unspecified.
+Otherwise, the bit- level representation of v is preserved.
+The first vector component specifies the 32 least significant bits;
+the second component specifies the 32 most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packDouble2x32.xml">GLSL packDouble2x32 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.unpackSnorm4x8(System.UInt32)">
+First, unpacks a single 32-bit unsigned integer p into a pair of 16-bit unsigned integers, four 8-bit unsigned integers, or four 8-bit signed integers.
+Then, each component is converted to a normalized floating-point value to generate the returned two- or four-component vector.
+
+The conversion for unpacked fixed-point value f to floating point is done as follows:
+unpackSnorm4x8: clamp(f / 127.0, -1, +1)
+
+The first component of the returned vector will be extracted from the least significant bits of the input;
+the last component will be extracted from the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackSnorm4x8.xml">GLSL unpackSnorm4x8 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.unpackUnorm4x8(System.UInt32)">
+First, unpacks a single 32-bit unsigned integer p into a pair of 16-bit unsigned integers, four 8-bit unsigned integers, or four 8-bit signed integers.
+Then, each component is converted to a normalized floating-point value to generate the returned two- or four-component vector.
+
+The conversion for unpacked fixed-point value f to floating point is done as follows:
+unpackUnorm4x8: f / 255.0
+
+The first component of the returned vector will be extracted from the least significant bits of the input;
+the last component will be extracted from the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackUnorm4x8.xml">GLSL unpackUnorm4x8 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.unpackSnorm2x16(System.UInt32)">
+First, unpacks a single 32-bit unsigned integer p into a pair of 16-bit unsigned integers, four 8-bit unsigned integers, or four 8-bit signed integers.
+Then, each component is converted to a normalized floating-point value to generate the returned two- or four-component vector.
+
+The conversion for unpacked fixed-point value f to floating point is done as follows:
+unpackSnorm2x16: clamp(f / 32767.0, -1, +1)
+
+The first component of the returned vector will be extracted from the least significant bits of the input;
+the last component will be extracted from the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackSnorm2x16.xml">GLSL unpackSnorm2x16 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.unpackUnorm2x16(System.UInt32)">
+First, unpacks a single 32-bit unsigned integer p into a pair of 16-bit unsigned integers, four 8-bit unsigned integers, or four 8-bit signed integers.
+Then, each component is converted to a normalized floating-point value to generate the returned two- or four-component vector.
+
+The conversion for unpacked fixed-point value f to floating point is done as follows:
+unpackUnorm2x16: f / 65535.0
+
+The first component of the returned vector will be extracted from the least significant bits of the input;
+the last component will be extracted from the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackUnorm2x16.xml">GLSL unpackUnorm2x16 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.packSnorm4x8(glm.vec&lt;0x4,System.Single,glm::packed_highp&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+First, converts each component of the normalized floating-point value v into 8- or 16-bit integer values.
+Then, the results are packed into the returned 32-bit unsigned integer.
+
+The conversion for component c of v to fixed point is done as follows:
+packSnorm4x8:	round(clamp(c, -1, +1) * 127.0)
+
+The first component of the vector will be written to the least significant bits of the output;
+the last component will be written to the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packSnorm4x8.xml">GLSL packSnorm4x8 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.packUnorm4x8(glm.vec&lt;0x4,System.Single,glm::packed_highp&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+First, converts each component of the normalized floating-point value v into 8- or 16-bit integer values.
+Then, the results are packed into the returned 32-bit unsigned integer.
+
+The conversion for component c of v to fixed point is done as follows:
+packUnorm4x8:	round(clamp(c, 0, +1) * 255.0)
+
+The first component of the vector will be written to the least significant bits of the output;
+the last component will be written to the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packUnorm4x8.xml">GLSL packUnorm4x8 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.packSnorm2x16(glm.vec&lt;0x2,System.Single,glm::packed_highp&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+First, converts each component of the normalized floating-point value v into 8- or 16-bit integer values.
+Then, the results are packed into the returned 32-bit unsigned integer.
+
+The conversion for component c of v to fixed point is done as follows:
+packSnorm2x16: round(clamp(v, -1, +1) * 32767.0)
+
+The first component of the vector will be written to the least significant bits of the output;
+the last component will be written to the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packSnorm2x16.xml">GLSL packSnorm2x16 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="M:glm.packUnorm2x16(glm.vec&lt;0x2,System.Single,glm::packed_highp&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+@addtogroup core_func_packing
+@{
+First, converts each component of the normalized floating-point value v into 8- or 16-bit integer values.
+Then, the results are packed into the returned 32-bit unsigned integer.
+
+The conversion for component c of v to fixed point is done as follows:
+packUnorm2x16: round(clamp(c, 0, +1) * 65535.0)
+
+The first component of the vector will be written to the least significant bits of the output;
+the last component will be written to the most significant bits.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packUnorm2x16.xml">GLSL packUnorm2x16 man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a></member>
+        <member name="D:glm.highp_mat2x2">
+2 columns of 2 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat2x2">
+2 columns of 2 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat2x2">
+2 columns of 2 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_mat2">
+2 columns of 2 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat2">
+2 columns of 2 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat2">
+@addtogroup core_matrix_precision
+@{
+2 columns of 2 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat2">
+2 columns of 2 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.mat2x2">
+@addtogroup core_matrix
+@{
+2 columns of 2 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat2x2">
+2 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat2x2">
+2 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat2x2">
+2 columns of 2 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_dmat2">
+2 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat2">
+2 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat2">
+@addtogroup core_matrix_precision
+@{
+2 columns of 2 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat2">
+2 columns of 2 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.dmat2x2">
+@addtogroup core_matrix
+@{
+2 columns of 2 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="M:glm.uintBitsToFloat(System.UInt32!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+Returns a floating-point value corresponding to a
+unsigned integer encoding of a floating-point value.
+If an inf or NaN is passed in, it will not signal, and the
+resulting floating point value is unspecified. Otherwise,
+the bit-level representation is preserved.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/uintBitsToFloat.xml">GLSL uintBitsToFloat man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.3 Common Functions</a></member>
+        <member name="M:glm.intBitsToFloat(System.Int32!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+Returns a floating-point value corresponding to a signed
+integer encoding of a floating-point value.
+If an inf or NaN is passed in, it will not signal, and the
+resulting floating point value is unspecified. Otherwise,
+the bit-level representation is preserved.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/intBitsToFloat.xml">GLSL intBitsToFloat man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.3 Common Functions</a></member>
+        <member name="M:glm.floatBitsToUint(System.Single!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+Returns a unsigned integer value representing
+the encoding of a floating-point value. The floatingpoint
+value's bit-level representation is preserved.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/floatBitsToUint.xml">GLSL floatBitsToUint man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.3 Common Functions</a></member>
+        <member name="M:glm.floatBitsToInt(System.Single!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+Returns a signed integer value representing
+the encoding of a floating-point value. The floating-point
+value's bit-level representation is preserved.
+
+@see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/floatBitsToInt.xml">GLSL floatBitsToInt man page</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.3 Common Functions</a></member>
+        <member name="D:glm.highp_mat4x4">
+4 columns of 4 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat4x4">
+4 columns of 4 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat4x4">
+4 columns of 4 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_mat4">
+4 columns of 4 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat4">
+4 columns of 4 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat4">
+@addtogroup core_matrix_precision
+@{
+4 columns of 4 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat4">
+4 columns of 4 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.mat4x4">
+@ingroup core_matrix
+@{
+4 columns of 4 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat4x4">
+4 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat4x4">
+4 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat4x4">
+4 columns of 4 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_dmat4">
+4 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat4">
+4 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat4">
+@addtogroup core_matrix_precision
+@{
+4 columns of 4 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat4">
+4 columns of 4 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.dmat4x4">
+@addtogroup core_matrix
+@{
+4 columns of 4 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_mat4x3">
+4 columns of 3 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat4x3">
+4 columns of 3 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat4x3">
+@addtogroup core_matrix_precision
+@{
+4 columns of 3 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat4x3">
+@addtogroup core_matrix
+@{
+4 columns of 3 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat4x3">
+4 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat4x3">
+4 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat4x3">
+@addtogroup core_matrix_precision
+@{
+4 columns of 3 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat4x3">
+@addtogroup core_matrix
+@{
+4 columns of 3 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_mat4x2">
+4 columns of 2 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat4x2">
+4 columns of 2 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat4x2">
+@addtogroup core_matrix_precision
+@{
+4 columns of 2 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat4x2">
+@addtogroup core_matrix
+@{
+4 columns of 2 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat4x2">
+4 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat4x2">
+4 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat4x2">
+@addtogroup core_matrix_precision
+@{
+4 columns of 2 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat4x2">
+@addtogroup core_matrix
+@{
+4 columns of 2 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_mat3x4">
+3 columns of 4 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat3x4">
+3 columns of 4 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat3x4">
+@addtogroup core_matrix_precision
+@{
+3 columns of 4 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat3x4">
+@addtogroup core_matrix
+@{
+3 columns of 4 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat3x4">
+3 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat3x4">
+3 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat3x4">
+@addtogroup core_matrix_precision
+@{
+3 columns of 4 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat3x4">
+@addtogroup core_matrix
+@{
+3 columns of 4 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_mat3x3">
+3 columns of 3 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat3x3">
+3 columns of 3 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat3x3">
+3 columns of 3 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_mat3">
+3 columns of 3 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat3">
+3 columns of 3 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat3">
+@addtogroup core_matrix_precision
+@{
+3 columns of 3 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat3">
+3 columns of 3 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.mat3x3">
+@addtogroup core_matrix
+@{
+3 columns of 3 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat3x3">
+3 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat3x3">
+3 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat3x3">
+3 columns of 3 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_dmat3">
+3 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat3">
+3 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat3">
+@addtogroup core_matrix_precision
+@{
+3 columns of 3 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat3">
+3 columns of 3 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.dmat3x3">
+@addtogroup core_matrix
+@{
+3 columns of 3 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_mat3x2">
+3 columns of 2 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat3x2">
+3 columns of 2 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat3x2">
+@addtogroup core_matrix_precision
+@{
+3 columns of 2 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat3x2">
+@addtogroup core
+@{
+3 columns of 2 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat3x2">
+3 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat3x2">
+3 columns of 2 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat3x2">
+@addtogroup core_matrix_precision
+@{
+3 columns of 2 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat3x2">
+@addtogroup core_matrix
+@{
+3 columns of 2 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_mat2x4">
+2 columns of 4 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat2x4">
+2 columns of 4 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat2x4">
+@addtogroup core_matrix_precision
+@{
+2 columns of 4 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat2x4">
+@addtogroup core_matrix
+@{
+2 columns of 4 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat2x4">
+2 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat2x4">
+2 columns of 4 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat2x4">
+@addtogroup core_matrix_precision
+@{
+2 columns of 4 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat2x4">
+@addtogroup core_matrix
+@{
+2 columns of 4 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_mat2x3">
+2 columns of 3 components matrix of single-precision floating-point numbers using high precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_mat2x3">
+2 columns of 3 components matrix of single-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_mat2x3">
+@addtogroup core_matrix_precision
+@{
+2 columns of 3 components matrix of single-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mat2x3">
+@addtogroup core_matrix
+@{
+2 columns of 3 components matrix of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.highp_dmat2x3">
+2 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dmat2x3">
+2 columns of 3 components matrix of double-precision floating-point numbers using medium precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.lowp_dmat2x3">
+@addtogroup core_matrix_precision
+@{
+2 columns of 3 components matrix of double-precision floating-point numbers using low precision arithmetic in term of ULPs.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dmat2x3">
+@addtogroup core_matrix
+@{
+2 columns of 3 components matrix of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.6 Matrices</a></member>
+        <member name="D:glm.u64vec4">
+64 bit unsigned integer vector of 4 components type.
+
+@see ext_vector_uint4_sized
+</member>
+        <member name="D:glm.u32vec4">
+32 bit unsigned integer vector of 4 components type.
+
+@see ext_vector_uint4_sized
+</member>
+        <member name="D:glm.u16vec4">
+16 bit unsigned integer vector of 4 components type.
+
+@see ext_vector_uint4_sized
+</member>
+        <member name="D:glm.u8vec4">
+@addtogroup ext_vector_uint4_sized
+@{
+8 bit unsigned integer vector of 4 components type.
+
+@see ext_vector_uint4_sized
+</member>
+        <member name="D:glm.uvec4">
+@addtogroup core_vector
+@{
+4 components vector of unsigned integer numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.i64vec4">
+64 bit signed integer vector of 4 components type.
+
+@see ext_vector_int4_sized
+</member>
+        <member name="D:glm.i32vec4">
+32 bit signed integer vector of 4 components type.
+
+@see ext_vector_int4_sized
+</member>
+        <member name="D:glm.i16vec4">
+16 bit signed integer vector of 4 components type.
+
+@see ext_vector_int4_sized
+</member>
+        <member name="D:glm.i8vec4">
+@addtogroup ext_vector_int4_sized
+@{
+8 bit signed integer vector of 4 components type.
+
+@see ext_vector_int4_sized
+</member>
+        <member name="D:glm.ivec4">
+@addtogroup core_vector
+@{
+4 components vector of signed integer numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_dvec4">
+4 components vector of low double-qualifier floating-point numbers.
+There is no guarantee on the actual qualifier.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dvec4">
+4 components vector of medium double-qualifier floating-point numbers.
+There is no guarantee on the actual qualifier.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_dvec4">
+@addtogroup core_vector_precision
+@{
+4 components vector of high double-qualifier floating-point numbers.
+There is no guarantee on the actual qualifier.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dvec4">
+@addtogroup core_vector
+@{
+4 components vector of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_vec4">
+4 components vector of low single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_vec4">
+4 components vector of medium single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_vec4">
+@addtogroup core_vector_precision
+@{
+4 components vector of high single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.vec4">
+@addtogroup core_vector
+@{
+4 components vector of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_bvec4">
+4 components vector of low qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_bvec4">
+4 components vector of medium qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_bvec4">
+@addtogroup core_vector_precision
+@{
+4 components vector of high qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.bvec4">
+@addtogroup core_vector
+@{
+4 components vector of boolean.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.u64vec3">
+64 bit unsigned integer vector of 3 components type.
+
+@see ext_vector_uint3_sized
+</member>
+        <member name="D:glm.u32vec3">
+32 bit unsigned integer vector of 3 components type.
+
+@see ext_vector_uint3_sized
+</member>
+        <member name="D:glm.u16vec3">
+16 bit unsigned integer vector of 3 components type.
+
+@see ext_vector_uint3_sized
+</member>
+        <member name="D:glm.u8vec3">
+@addtogroup ext_vector_uint3_sized
+@{
+8 bit unsigned integer vector of 3 components type.
+
+@see ext_vector_uint3_sized
+</member>
+        <member name="D:glm.uvec3">
+@addtogroup core_vector
+@{
+3 components vector of unsigned integer numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.i64vec3">
+64 bit signed integer vector of 3 components type.
+
+@see ext_vector_int3_sized
+</member>
+        <member name="D:glm.i32vec3">
+32 bit signed integer vector of 3 components type.
+
+@see ext_vector_int3_sized
+</member>
+        <member name="D:glm.i16vec3">
+16 bit signed integer vector of 3 components type.
+
+@see ext_vector_int3_sized
+</member>
+        <member name="D:glm.i8vec3">
+@addtogroup ext_vector_int3_sized
+@{
+8 bit signed integer vector of 3 components type.
+
+@see ext_vector_int3_sized
+</member>
+        <member name="D:glm.ivec3">
+@addtogroup core_vector
+@{
+3 components vector of signed integer numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_dvec3">
+3 components vector of low double-qualifier floating-point numbers.
+There is no guarantee on the actual qualifier.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dvec3">
+3 components vector of medium double-qualifier floating-point numbers.
+There is no guarantee on the actual qualifier.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_dvec3">
+@addtogroup core_vector_precision
+@{
+3 components vector of high double-qualifier floating-point numbers.
+There is no guarantee on the actual qualifier.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dvec3">
+@addtogroup core_vector
+@{
+3 components vector of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_vec3">
+3 components vector of low single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_vec3">
+3 components vector of medium single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_vec3">
+@addtogroup core_vector_precision
+@{
+3 components vector of high single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.vec3">
+@addtogroup core_vector
+@{
+3 components vector of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_bvec3">
+3 components vector of low qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_bvec3">
+3 components vector of medium qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_bvec3">
+@addtogroup core_vector_precision
+@{
+3 components vector of high qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.bvec3">
+@addtogroup core_vector
+@{
+3 components vector of boolean.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.u64vec2">
+64 bit unsigned integer vector of 2 components type.
+
+@see ext_vector_uint2_sized
+</member>
+        <member name="D:glm.u32vec2">
+32 bit unsigned integer vector of 2 components type.
+
+@see ext_vector_uint2_sized
+</member>
+        <member name="D:glm.u16vec2">
+16 bit unsigned integer vector of 2 components type.
+
+@see ext_vector_uint2_sized
+</member>
+        <member name="D:glm.u8vec2">
+@addtogroup ext_vector_uint2_sized
+@{
+8 bit unsigned integer vector of 2 components type.
+
+@see ext_vector_uint2_sized
+</member>
+        <member name="D:glm.uint64">
+64 bit unsigned integer type.
+</member>
+        <member name="D:glm.uint32">
+32 bit unsigned integer type.
+</member>
+        <member name="D:glm.uint16">
+16 bit unsigned integer type.
+</member>
+        <member name="D:glm.uint8">
+@addtogroup ext_scalar_uint_sized
+@{
+8 bit unsigned integer type.
+</member>
+        <member name="D:glm.uvec2">
+@addtogroup core_vector
+@{
+2 components vector of unsigned integer numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.i64vec2">
+64 bit signed integer vector of 2 components type.
+
+@see ext_vector_int2_sized
+</member>
+        <member name="D:glm.i32vec2">
+32 bit signed integer vector of 2 components type.
+
+@see ext_vector_int2_sized
+</member>
+        <member name="D:glm.i16vec2">
+16 bit signed integer vector of 2 components type.
+
+@see ext_vector_int2_sized
+</member>
+        <member name="D:glm.i8vec2">
+@addtogroup ext_vector_int2_sized
+@{
+8 bit signed integer vector of 2 components type.
+
+@see ext_vector_int2_sized
+</member>
+        <member name="D:glm.int64">
+64 bit signed integer type.
+</member>
+        <member name="D:glm.int32">
+32 bit signed integer type.
+</member>
+        <member name="D:glm.int16">
+16 bit signed integer type.
+</member>
+        <member name="D:glm.int8">
+@addtogroup ext_scalar_int_sized
+@{
+8 bit signed integer type.
+</member>
+        <member name="D:glm.ivec2">
+@addtogroup core_vector
+@{
+2 components vector of signed integer numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_dvec2">
+2 components vector of low double-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_dvec2">
+2 components vector of medium double-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_dvec2">
+@addtogroup core_vector_precision
+@{
+2 components vector of high double-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.dvec2">
+@addtogroup core_vector
+@{
+2 components vector of double-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_vec2">
+2 components vector of low single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_vec2">
+2 components vector of medium single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_vec2">
+@addtogroup core_vector_precision
+@{
+2 components vector of high single-qualifier floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.vec2">
+@addtogroup core_vector
+@{
+2 components vector of single-precision floating-point numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="D:glm.lowp_bvec2">
+2 components vector of low qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.mediump_bvec2">
+2 components vector of medium qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.highp_bvec2">
+@addtogroup core_vector_precision
+@{
+2 components vector of high qualifier bool numbers.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a>
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.7.2 Precision Qualifier</a></member>
+        <member name="D:glm.bvec2">
+@addtogroup core_vector
+@{
+2 components vector of boolean.
+
+@see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 4.1.5 Vectors</a></member>
+        <member name="T:glm.qualifier">
+Qualify GLM types in term of alignment (packed, aligned) and precision in term of ULPs (lowp, mediump, highp)
+</member>
+        <member name="M:lve.LveSwapChain.findDepthFormat">
+            <summary>
+Trouve le format de profondeur pris en charge
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveSwapChain.chooseSwapExtent(VkSurfaceCapabilitiesKHR!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Choisi l'étendue pour la chaîne d'échanges
+</summary>
+            <param name="capabilities" />
+            <returns />
+        </member>
+        <member name="M:lve.LveSwapChain.chooseSwapPresentMode(std.vector&lt;VkPresentModeKHR,std.allocator&lt;VkPresentModeKHR&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Choisi le mode de présentation pour la chaîne d'échanges
+</summary>
+            <param name="availablePresentModes" />
+            <returns />
+        </member>
+        <member name="M:lve.LveSwapChain.chooseSwapSurfaceFormat(std.vector&lt;VkSurfaceFormatKHR,std.allocator&lt;VkSurfaceFormatKHR&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Choisi le format de surface pour la chaîne d'échanges
+</summary>
+            <param name="availableFormats" />
+            <returns />
+        </member>
+        <member name="M:lve.LveSwapChain.createSyncObjects">
+            <summary>
+Crée les objets de synchronisation Vulkan tels que les sémaphores et les clôtures
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.createDepthResources">
+            <summary>
+Crée les ressources de profondeur pour chaque image
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.createFramebuffers">
+            <summary>
+Crée les tampons de trame Vulkan associés à chaque image
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.createRenderPass">
+            <summary>
+Crée le tampon de rendu Vulkan pour les images de la chaîne d'échanges
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.createImageViews">
+            <summary>
+Crée les images de vue pour chaque image dans la chaîne d'échanges
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.createSwapChain">
+            <summary>
+Crée la chaîne d'échanges Vulkan
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.submitCommandBuffers(VkCommandBuffer_T*!System.Runtime.CompilerServices.IsConst*,System.UInt32*)">
+            <summary>
+Soumet les tampons de commandes pour le rendu.
+Gère les clôtures pour synchroniser le rendu
+</summary>
+            <param name="buffers" />
+            <param name="imageIndex" />
+            <returns />
+        </member>
+        <member name="M:lve.LveSwapChain.acquireNextImage(System.UInt32*)">
+            <summary>
+Acquiert l'index de l'image pour laquelle effectuer le rendu dans la chaîne d'échanges.
+Utilise des sémaphores pour synchroniser l'acquisition d'images
+</summary>
+            <param name="imageIndex" />
+            <returns />
+        </member>
+        <member name="M:lve.LveSwapChain.Dispose">
+            <summary>
+Libère les ressources associées à la chaîne d'échanges, y compris les images, les images de profondeur, les images de vue, les tampons de rendu, etc.
+Détruit également les objets de synchronisation tels que les sémaphores et les clôtures.
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.init">
+            <summary>
+Appelée dans les constructeurs pour initialiser la chaîne d'échanges en appelant plusieurs fonctions privées
+</summary>
+        </member>
+        <member name="M:lve.LveSwapChain.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkExtent2D,std.shared_ptr&lt;lve.LveSwapChain&gt;)">
+            <summary>
+ Initialise une nouvelle chaîne d'échanges basée sur une précédente (utilisée pour gérer les changements de taille de fenêtre).
+</summary>
+            <param name="deviceRef" />
+            <param name="extent" />
+            <param name="previous" />
+        </member>
+        <member name="M:lve.LveSwapChain.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,VkExtent2D)">
+            <summary>
+Initialise une nouvelle chaîne d'échanges.
+</summary>
+            <param name="deviceRef" />
+            <param name="extent" />
+        </member>
+        <member name="M:lve.LveRenderer.endSwapChainRenderPass(VkCommandBuffer_T*)">
+            <summary>
+Termine la passe de rendu pour la chaîne d'échange actuelle
+</summary>
+            <param name="commandBuffer" />
+        </member>
+        <member name="M:lve.LveRenderer.beginSwapChainRenderPass(VkCommandBuffer_T*)">
+            <summary>
+Commence une passe de rendu pour la chaîne d'échange actuelle.
+Configure les paramètres de la passe de rendu, tels que la couleur de fond
+</summary>
+            <param name="commandBuffer" />
+        </member>
+        <member name="M:lve.LveRenderer.endFrame">
+            <summary>
+Termine l'enregistrement des commandes pour le tampon de commande actuel.
+Soumet les commandes au GPU via la chaîne d'échange.
+Vérifie si la chaîne d'échange doit être recréée en cas de redimensionnement de la fenêtre
+</summary>
+        </member>
+        <member name="M:lve.LveRenderer.beginFrame">
+            <summary>
+Acquiert l'image suivante de la chaîne d'échange.
+Vérifie si la chaîne d'échange a besoin d'être recréée en cas de redimensionnement de la fenêtre.
+ Commence l'enregistrement des commandes pour le tampon de commande actuel
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveRenderer.freeCommandBuffers">
+            <summary>
+Libère les tampons de commandes Vulkan
+</summary>
+        </member>
+        <member name="M:lve.LveRenderer.createCommandBuffers">
+            <summary>
+Alloue les tampons de commandes nécessaires pour l'exécution des commandes GPU.
+Utilise la classe LveSwapChain pour déterminer le nombre maximal de tampons de commandes en vol
+</summary>
+        </member>
+        <member name="M:lve.LveRenderer.recreateSwapChain">
+            <summary>
+Obtient la taille de la fenêtre et attend que la taille ne soit pas nulle.
+Attend que le périphérique Vulkan termine les opérations en cours.
+Recrée ou initialise la chaîne d'échange Vulkan (LveSwapChain)
+</summary>
+        </member>
+        <member name="M:lve.LveRenderer.Dispose">
+            <summary>
+Appelle la fonction freeCommandBuffers pour libérer les tampons de commandes
+</summary>
+        </member>
+        <member name="M:lve.LveRenderer.#ctor(lve.LveWindow*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Prend une référence à un objet LveWindow et un objet LveDevice en paramètres.
+Appelle les fonctions recreateSwapChain et createCommandBuffers pour initialiser le rendu
+</summary>
+            <param name="window" />
+            <param name="device" />
+        </member>
+        <member name="M:lve.LveDescriptorWriter.overwrite(VkDescriptorSet_T**!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Effectue les écritures sur un ensemble de descripteurs existant
+</summary>
+            <param name="set" />
+        </member>
+        <member name="M:lve.LveDescriptorWriter.build(VkDescriptorSet_T**!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Alloue un ensemble de descripteurs à partir du pool et effectue les écritures
+</summary>
+            <param name="set" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorWriter.writeImage(System.UInt32,VkDescriptorImageInfo*)">
+            <summary>
+Ajoute une écriture de descripteur pour une image
+</summary>
+            <param name="binding" />
+            <param name="imageInfo" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorWriter.writeBuffer(System.UInt32,VkDescriptorBufferInfo*)">
+            <summary>
+Ajoute une écriture de descripteur pour un tampon
+</summary>
+            <param name="binding" />
+            <param name="bufferInfo" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorWriter.#ctor(lve.LveDescriptorSetLayout*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,lve.LveDescriptorPool*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Crée un objet LveDescriptorWriter avec un layout de descripteur et un pool
+</summary>
+            <param name="setLayout" />
+            <param name="pool" />
+        </member>
+        <member name="M:lve.LveDescriptorPool.getDescriptorPool">
+            <summary>
+Retourne le pool de descriptor
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorPool.resetPool">
+            <summary>
+Réinitialise le pool de descripteurs
+</summary>
+        </member>
+        <member name="M:lve.LveDescriptorPool.freeDescriptors(std.vector&lt;VkDescriptorSet_T**,std.allocator&lt;VkDescriptorSet_T**&gt;&gt;*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Libère des ensembles de descripteurs du pool
+</summary>
+            <param name="descriptors" />
+        </member>
+        <member name="M:lve.LveDescriptorPool.allocateDescriptor(VkDescriptorSetLayout_T*!System.Runtime.CompilerServices.IsConst,VkDescriptorSet_T**!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Alloue un ensemble de descripteurs à partir du pool
+</summary>
+            <param name="descriptorSetLayout" />
+            <param name="descriptor" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorPool.Dispose">
+            <summary>
+Libère les ressources allouées
+</summary>
+        </member>
+        <member name="M:lve.LveDescriptorPool.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.UInt32,System.UInt32,std.vector&lt;VkDescriptorPoolSize,std.allocator&lt;VkDescriptorPoolSize&gt;&gt;!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>
+Crée un objet LveDescriptorPool avec les paramètres spécifiés
+</summary>
+            <param name="lveDevice" />
+            <param name="maxSets" />
+            <param name="poolFlags" />
+            <param name="poolSizes" />
+        </member>
+        <member name="M:lve.LveDescriptorPool.Builder.build">
+            <summary>
+Construit un objet LveDescriptorPool avec les paramètres spécifiés
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorPool.Builder.setMaxSets(System.UInt32)">
+            <summary>
+Définit le nombre maximal d'ensembles de descripteurs pouvant être alloués
+</summary>
+            <param name="count" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorPool.Builder.setPoolFlags(System.UInt32)">
+            <summary>
+Définit les drapeaux du pool de descripteurs
+</summary>
+            <param name="flags" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorPool.Builder.addPoolSize(VkDescriptorType,System.UInt32)">
+            <summary>
+Ajoute une taille de pool pour un type de descripteur spécifié
+</summary>
+            <param name="descriptorType" />
+            <param name="count" />
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorSetLayout.Dispose">
+            <summary>
+ Libère les ressources allouées
+</summary>
+        </member>
+        <member name="M:lve.LveDescriptorSetLayout.#ctor(lve.LveDevice*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,std.unordered_map&lt;System.UInt32,VkDescriptorSetLayoutBinding,std.hash&lt;System.UInt32&gt;,std.equal_to&lt;System.UInt32&gt;,std.allocator&lt;std.pair&lt;System.UInt32!System.Runtime.CompilerServices.IsConst,VkDescriptorSetLayoutBinding&gt;&gt;&gt;)">
+            <summary>
+Crée un objet LveDescriptorSetLayout avec les liaisons spécifiées
+</summary>
+            <param name="lveDevice" />
+            <param name="bindings" />
+        </member>
+        <member name="M:lve.LveDescriptorSetLayout.Builder.build">
+            <summary>
+Construit un objet LveDescriptorSetLayout avec les liaisons ajoutées
+</summary>
+            <returns />
+        </member>
+        <member name="M:lve.LveDescriptorSetLayout.Builder.addBinding(System.UInt32,VkDescriptorType,System.UInt32,System.UInt32)">
+            <summary>
+Ajoute une liaison au descripteur avec les spécifications fournies
+</summary>
+            <param name="binding" />
+            <param name="descriptorType" />
+            <param name="stageFlags" />
+            <param name="count" />
+            <returns />
+        </member>
+        <!-- Discarding badly formed XML document comment for member 'M:acos(System.Single)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:acos(System.Single)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:acos(System.Single)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:acos(System.Single)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:acos(System.Single)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:acos(System.Single)'. -->
+    </members>
+</doc>
